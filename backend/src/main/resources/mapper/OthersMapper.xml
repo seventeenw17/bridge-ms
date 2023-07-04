@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.OthersMapper">
+    <insert id="insertOne" parameterType="java.util.Map">
+        insert into bridgetest.others(oth_totalimg, oth_engineer, oth_faceimg, oth_people, oth_date, oth_tips, oth_id,
+                                      bri_id)
+        values (#{oth_totalimg},
+                #{oth_engineer},
+                #{oth_faceimg},
+                #{oth_people},
+                #{oth_date},
+                #{oth_tips},
+                #{oth_id},
+                #{bri_id})
+    </insert>
+
+    <select id="getPicUrl" parameterType="java.lang.String" resultType="java.lang.String">
+        select oth_totalimg
+        from others
+        where bri_id = #{brino}
+    </select>
+    <select id="getOthcnt" resultType="java.lang.Integer">
+        select count(*)
+        from others
+    </select>
+    <select id="getOthers" resultType="java.util.Map">
+        select *
+        from others
+        where bri_id = #{bri_id}
+    </select>
+</mapper>

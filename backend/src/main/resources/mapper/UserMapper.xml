@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.UserMapper">
+    <insert id="insertOne" parameterType="com.bms.backend.backend.pojo.User">
+        insert into user(units_id, password,username) values(
+        #{units_id},
+        #{password},
+        #{username}
+        )
+    </insert>
+
+    <select id="getUserByUsername" parameterType="java.lang.String" resultType="com.bms.backend.backend.pojo.User">
+        select * from user where username=#{username}
+    </select>
+</mapper>

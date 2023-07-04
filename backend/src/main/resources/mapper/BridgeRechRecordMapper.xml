@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.BridgeRechRecordMapper">
+    <insert id="insertOne" parameterType="com.bms.backend.backend.pojo.BridgeRechRecord">
+        insert into bridgetest.bridgerechrecord(bri_id, rech_nowtime, rech_latime, rech_tem, rech_grade, rech_clzk,
+                                                rech_xfyhzk, rech_notekeeper, rech_prinpeo, rech_netime)
+        values (#{bri_id},
+                #{rech_nowtime},
+                #{rech_latime},
+                #{rech_tem},
+                #{rech_grade},
+                #{rech_clzk},
+                #{rech_xfyhzk},
+                #{rech_notekeeper},
+                #{rech_prinpeo},
+                #{rech_netime})
+    </insert>
+    <select id="getRech" resultType="java.util.Map">
+        select *
+        from bridgetest.bridgerechrecord
+        where bri_id = #{bri_id}
+    </select>
+</mapper>

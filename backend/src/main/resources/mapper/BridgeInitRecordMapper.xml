@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.BridgeInitRecordMapper">
+    <insert id="insertOne" parameterType="java.util.Map">
+        insert into bridgetest.bridgeinitrecord(record_ulform, record_group, record_method, record_precase,
+                                                record_aftercase, record_incocase, record_fintime, record_firtime,
+                                                record_tem, record_height, record_gzx, record_zlxx, record_dtmheight,
+                                                record_dtmlean, record_levheight, record_hordis, record_susbri,
+                                                record_wbas, record_dgsl, record_gjsize, record_czqd, record_bhcgd,
+                                                record_hntmsd, record_stares, record_dynres, record_notekeeper,
+                                                record_id, bri_id)
+        values (#{record_ulform},
+                #{record_group},
+                #{record_method},
+                #{record_precase},
+                #{record_aftercase},
+                #{record_incocase},
+                #{record_fintime},
+                #{record_firtime},
+                #{record_tem},
+                #{record_height},
+                #{record_gzx},
+                #{record_zlxx},
+                #{record_dtmheight},
+                #{record_dtmlean},
+                #{record_levheight},
+                #{record_hordis},
+                #{record_susbri},
+                #{record_wbas},
+                #{record_dgsl},
+                #{record_gjsize},
+                #{record_czqd},
+                #{record_bhcgd},
+                #{record_hntmsd},
+                #{record_stares},
+                #{record_dynres},
+                #{record_notekeeper},
+                #{record_id},
+                #{bri_id})
+    </insert>
+    <select id="getInitcard" parameterType="java.lang.String" resultType="java.util.Map">
+        select * from bridgeinitrecord where bri_id=#{bri_id}
+    </select>
+</mapper>

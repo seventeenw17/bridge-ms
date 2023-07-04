@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.BridgeMapper">
+    <insert id="insertOne" parameterType="java.util.Map">
+        insert into bridgetest.bridge
+        values (#{bri_id}, #{bty_id}, #{route_id}, #{bri_name})
+    </insert>
+    <select id="selectById" parameterType="java.lang.String" resultType="java.lang.String">
+        select bri_name
+        from bridge
+        where bri_id = #{brino}
+    </select>
+    <select id="getAllbri" resultType="java.lang.String">
+        select bri_id
+        from bridge
+    </select>
+    <select id="getBricnt" resultType="java.lang.Integer">
+        select count(bri_id)
+        from bridge
+    </select>
+    <select id="getRouteBybri" resultType="java.lang.String">
+        select route_id
+        from bridge
+        where bri_id = #{bri_id}
+    </select>
+    <select id="getNameByid" resultType="java.lang.String">
+        select bri_name
+        from bridge
+        where bri_id = #{bri_id}
+    </select>
+    <select id="getBriByid" resultType="java.util.Map">
+        select *
+        from bridge
+        where bri_id = #{bri_id};
+    </select>
+</mapper>

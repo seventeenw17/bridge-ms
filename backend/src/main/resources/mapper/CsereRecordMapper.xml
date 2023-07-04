@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.CsereRecordMapper">
+
+    <insert id="insertOne">
+        insert into bridgetest.cserecord
+        values (#{bri_id},
+                #{cse_time},
+                #{cse_type},
+                #{cse_rea},
+                #{cse_range},
+                #{cse_cost},
+                #{cse_mfrom},
+                #{cse_judge})
+    </insert>
+
+    <select id="getCsere" resultType="java.util.Map">
+        select *
+        from bridgetest.cserecord
+        where bri_id = #{bri_id}
+    </select>
+
+</mapper>

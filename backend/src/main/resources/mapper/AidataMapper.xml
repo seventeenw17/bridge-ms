@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.AidataMapper">
+    <insert id="insertOne">
+        insert into aidata
+        values (#{bri_id},
+                #{AIdata_id},
+                #{AIdata_funtype},
+                #{AIdata_load},
+                #{AIdata_slope},
+                #{AIdata_radius},
+                #{AIdata_fintime})
+    </insert>
+    <select id="getallByid" resultType="java.util.Map">
+        select *
+        from aidata
+        where bri_id = #{bri_id};
+    </select>
+</mapper>

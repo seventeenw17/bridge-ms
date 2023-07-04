@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.AssunitMapper">
+    <insert id="insertOne">
+        insert into assunit
+        values (#{asun_id}, #{part_id}, #{asun_name})
+    </insert>
+    <update id="updateAssunit">
+        update assunit
+        set asun_id=#{new_asun_id},
+            part_id=#{part_id},
+            asun_name=#{asun_name}
+        where asun_id = #{old_asun_id}
+    </update>
+    <delete id="deleteAssunit">
+        delete
+        from assunit
+        where asun_id = #{asun_id}
+    </delete>
+    <select id="getall" resultType="java.util.Map">
+        select *
+        from assunit;
+    </select>
+</mapper>

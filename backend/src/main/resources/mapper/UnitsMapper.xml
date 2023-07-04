@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.UnitMapper">
+    <insert id="insertOne">
+        insert into units
+        values (#{units_id}, #{units_name})
+    </insert>
+    <update id="updateUnit">
+        update units
+        set units_id=#{new_units_id},
+            units_name=#{units_name}
+        where units_id = #{old_units_id}
+    </update>
+    <delete id="deleteUnit">
+        delete
+        from units
+        where units_id = #{units_id}
+    </delete>
+
+    <select id="getUnit" parameterType="java.lang.String" resultType="com.bms.backend.backend.pojo.Units">
+        select *
+        from units
+        where units_id = #{units_id}
+    </select>
+    <select id="getALL" resultType="java.util.Map">
+        select *
+        from units;
+    </select>
+</mapper>

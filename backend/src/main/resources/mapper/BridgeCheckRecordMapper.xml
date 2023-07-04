@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.BridgeCheckRecordMapper">
+    <insert id="insertOne">
+        insert into bridgetest.bridgecheckrecord
+        values (#{bri_id},
+                #{chrecord_settime},
+                #{chrecord_checktype},
+                #{chrecord_spchcln},
+                #{chrecord_handleway},
+                #{chrecord_nechtime})
+    </insert>
+    <select id="getcheckcard" resultType="java.util.Map">
+        select *
+        from bridgetest.bridgecheckrecord
+        where bri_id = #{bri_id};
+    </select>
+</mapper>

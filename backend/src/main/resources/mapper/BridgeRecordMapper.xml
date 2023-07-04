@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bms.backend.backend.mapper.BridgeRecordMapper">
+    <insert id="insertOne">
+        insert into bridgetest.bridgerecord
+        values (#{bri_id},
+                #{brcord_id},
+                #{brcord_despaper},
+                #{brcord_file},
+                #{bricord_finpaper},
+                #{bricord_buildfile},
+                #{bricord_checkfile},
+                #{bricord_reviewfile},
+                #{bricord_refularfile},
+                #{bricord_specialfile},
+                #{bricord_fixfile},
+                #{bricord_elsefile},
+                #{bricord_fileform},
+                #{bricord_filltime})
+    </insert>
+    <select id="getreByid" resultType="java.util.Map">
+        select *
+        from bridgetest.bridgerecord
+        where bri_id = #{bri_id}
+    </select>
+
+</mapper>
